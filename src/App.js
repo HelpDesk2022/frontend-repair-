@@ -1,13 +1,14 @@
 import React from 'react';
-import Email from "./Email"
-
+import Rotas from './Rotas';
+import {
+  BrowserRouter as Router} from "react-router-dom";
 
 
 function App() {
   return (
-    <div className="App">
-   <Email/>
-    </div>
+    <Router>
+      <Rotas/>
+    </Router>
   );
 }
 

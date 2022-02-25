@@ -1,9 +1,9 @@
 import React from "react";
 import "./email.css"
-import Elipse from "../src/fotos/Elipse.png"
-import Repair from "../src/fotos/Repair.png"
+import Elipse from "../fotos/Elipse.png"
+import Repair from "../fotos/Repair.png"
 
-export default function (props) {
+export default function () {
   return (
     <>
     <div className="container">
@@ -14,11 +14,12 @@ export default function (props) {
         <h1>Faça seu login</h1>
         <p><b>E-mail</b></p>
         <form className="box">
-          <input id="Email"class="form_field"type="Email" prequired/>
-          <button type="button" onclick="validUserForm()" class="form_button">Continuar</button>
+          <input id="Email" className="form_field" type="Email"/> 
+          <button type="button"  className="form_button">Continuar</button>
           
         </form>
       </div>
     </>
   );
-}
+  }
+
