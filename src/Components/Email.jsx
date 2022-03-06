@@ -3,15 +3,15 @@ import "./email.css";
 import Elipse from "../fotos/Elipse.png";
 import Repair from "../fotos/Repair.png";
 import {useForm} from "react-hook-form"
+import { useNavigate } from 'react-router-dom';
 
-import {Link} from "react-router-dom"
 
 
    function Email() {
-
+    const navigate = useNavigate();
      const {register, formState: {errors}, handleSubmit} = useForm();
      const onSubmit = data => {
-     
+     navigate('/senha')
      };
       
   
