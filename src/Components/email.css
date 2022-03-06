@@ -15,12 +15,13 @@
   width: 85%;
   padding: 2px 0 2px 3px;
   margin-bottom: 10px;
-  margin-top: -10%;
+  margin-top: -40%;
   margin-left: 5%;
   height: 20px;
   outline: none;
   border-radius: 5px;
   border: none;
+  
 }
 
 p {
@@ -41,12 +42,12 @@ h1 {
   background-color: rgb(29, 46, 124);
   color: white;
   width: 50%;
-  padding: 10px;
-  margin-left: 24%;
+  padding: 12px;
+  margin-left: 36%;
   border-radius: 10px;
-  margin-top: 90px;
   border: none;
   font-family: sans-serif;
+  text-decoration: none;
 }
 
 .container {
@@ -83,4 +84,11 @@ button:active {
     width: 500px;
     margin-top: 5%;
     margin-left: 4%;
+}
+
+.erro {
+  color: red;
+  margin-top: -2px;
+  font-size: 13px;
+  font-family: sans-serif;
 }
