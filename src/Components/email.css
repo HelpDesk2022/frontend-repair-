@@ -43,11 +43,12 @@ h1 {
   color: white;
   width: 50%;
   padding: 12px;
-  margin-left: 36%;
+  margin-left: 24%;
   border-radius: 10px;
   border: none;
   font-family: sans-serif;
   text-decoration: none;
+  margin-top: -12%;
 }
 
 .container {

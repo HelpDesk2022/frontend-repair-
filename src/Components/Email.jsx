@@ -11,7 +11,10 @@ import { useNavigate } from 'react-router-dom';
     const navigate = useNavigate();
      const {register, formState: {errors}, handleSubmit} = useForm();
      const onSubmit = data => {
-     navigate('/senha')
+      if (!/.+@.+\.[A-Za-z]+$/.test(data.Email)){
+        alert("Email invalido");
+      } else navigate('/senha',{ params: {email:data.Email}}); 
+      console.log(data)
      };
       
   

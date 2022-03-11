@@ -2,45 +2,19 @@ import { useState, useEffect } from "react";
 import "./senha.css";
 import Elipse from "../fotos/Elipse.png";
 import Repair from "../fotos/Repair.png";
-import { Link } from "react-router-dom";
+import {useForm} from "react-hook-form"
+import { useNavigate } from 'react-router-dom';
 
-function Senha() {
-  const initialValues = { username: "", email: "", password: "" };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-    if (!values.email) {
-      errors.password = "Por favor, digite sua senha!";
-    } else if (!regex.test(values.password)) {
-      errors.password = "Senha incorreta";
-    }
-
-    return errors;
+function Senha(props) {
+  const navigate = useNavigate();
+  const {register, formState: {errors}, handleSubmit} = useForm();
+  const onSubmit = data => {
+    console.log(data)
+    console.log(props.email)
+  /*navigate('/')*/
   };
   return (
-    <>
+    <><h1 className="teste">{props.Email}</h1>
       <div className="container1">
         <img className="fundo" src={Elipse} alt="Elipse" />
       </div>
@@ -50,16 +24,12 @@ function Senha() {
         <p>
           <b>Senha</b>
         </p>
-        <form onSubmit={handleSubmit} className="box">
-        <p className="falha">{formErrors.password}</p>
-        <input
-              type="password"
-              id="Senha"
-              className="field"
-              name="password"
-              value={formValues.password}
-              onChange={handleChange}
-          />
+        <form onSubmit={handleSubmit(onSubmit)} className="box">
+        <input className="form_field"
+        maxLength="8"
+           type="password"
+           {...register("Senha", {required: true})}/>
+           <p className="erro">{errors.Senha?.type === 'required' && "Preencha sua senha"}</p>
           <br></br>
           <br />
           <br />
@@ -67,9 +37,9 @@ function Senha() {
           <br />
           <br />
           <br />
-          <Link to="/" className="form_botton">
-            Entrar
-          </Link>
+          <button type="submit"  id="botao" className="form_botton">Entrar</button>
+
+          <p className="text"><a href="">Esqueceu a senha ? Clique aqui!</a></p>
         </form>
       </div>
     </>
